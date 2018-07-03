@@ -1,0 +1,28 @@
+# https://github.com/Huachao/vscode-restclient
+
+GET http://localhost:3000
+
+###
+
+POST http://localhost:3000/article
+content-type: application/json
+
+{
+    "name": "sample",
+    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+}
+
+###
+
+GET http://localhost:3000/article
+content-type: application/json
+
+###
+
+GET http://localhost:3000/article/123
+content-type: application/json
+
+###
+
+DELETE http://localhost:3000/article/123
+content-type: application/json

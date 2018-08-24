@@ -8,6 +8,10 @@ GET http://localhost:3000/user
 
 ###
 
+GET http://localhost:3000/user/1
+
+###
+
 PUT http://localhost:3000/user/1
 
 ###

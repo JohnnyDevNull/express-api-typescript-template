@@ -1,4 +1,3 @@
-import { ArticlesController } from '../controllers/articles-controller';
 import { IndexController } from '../controllers/index-controller';
 import { isProdMode } from '../environment';
 import { ArtcilesRouter } from './articles-router';
@@ -8,7 +7,6 @@ import { UsersRouter } from './users-router';
 export class MainRouter {
 
   public indexCtrl: IndexController = new IndexController();
-  public articleCtrl: ArticlesController = new ArticlesController();
 
   public attach(app): void {
     this.addRoutes(app);

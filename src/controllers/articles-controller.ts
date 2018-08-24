@@ -1,29 +1,31 @@
-import { BaseRestModel } from './../models/base-model';
 import { Request, Response } from 'express';
+import { BaseRestModel } from '../models/base-rest-model';
 
-export class ArticleController {
+export class ArticlesController {
 
   public addArticle (req: Request, res: Response) {
     const result: BaseRestModel = {
-      code: 0,
-      message: 'success',
-      meta: {}
+      meta: {
+        code: 0,
+        message: 'addArticle success!',
+      },
     };
+
     res.json(result);
   }
 
-  public getArtciles (req: Request, res: Response) {
+  public getArticles (req: Request, res: Response) {
     const result: BaseRestModel = {
-      code: 0,
-      message: 'success',
+      meta: {
+        code: 0,
+        message: 'getArticles success!',
+        hasMore: true,
+        count: 2
+      },
       data: [
         { id: 1, title: 'Lore Ipsum' },
         { id: 2, title: 'Lore Ipsum 2' }
       ],
-      meta: {
-        hasMore: true,
-        count: 2
-      }
     };
 
     res.json(result);
@@ -32,18 +34,20 @@ export class ArticleController {
   public getArticleById (req: Request, res: Response) {
     const articleId = +req.params.articleId;
     const result: BaseRestModel = {
-      code: 0,
-      message: 'getArticleById: ' + articleId,
-      meta: {}
+      meta: {
+        code: 0,
+        message: 'getArticleById: ' + articleId,
+      },
     };
     res.json(result);
   }
 
   public createArticle (req: Request, res: Response) {
     const result: BaseRestModel = {
-      code: 0,
-      message: 'createArticle success!',
-      meta: {}
+      meta: {
+        code: 0,
+        message: 'createArticle success!',
+      },
     };
     res.json(result);
   }
@@ -51,9 +55,10 @@ export class ArticleController {
   public updateArticleById (req: Request, res: Response) {
     const articleId = +req.params.articleId;
     const result: BaseRestModel = {
-      code: 0,
-      message: 'updateArticleById: ' + articleId,
-      meta: {}
+      meta: {
+        code: 0,
+        message: 'updateArticleById: ' + articleId,
+      },
     };
     res.json(result);
   }
@@ -61,9 +66,10 @@ export class ArticleController {
   public deleteArticleById (req: Request, res: Response) {
     const articleId = +req.params.articleId;
     const result: BaseRestModel = {
-      code: 0,
-      message: 'deleteArticleById: ' + articleId,
-      meta: {}
+      meta: {
+        code: 0,
+        message: 'deleteArticleById: ' + articleId,
+      },
     };
     res.json(result);
   }

@@ -1,11 +1,14 @@
+import { ArticlesController } from '../controllers/articles-controller';
 import { IndexController } from '../controllers/index-controller';
 import { isProdMode } from '../environment';
-import { ArticleController } from './../controllers/article-controller';
+import { ArtcilesRouter } from './articles-router';
+import { TokenRouter } from './token-router';
+import { UsersRouter } from './users-router';
 
 export class MainRouter {
 
   public indexCtrl: IndexController = new IndexController();
-  public articleCtrl: ArticleController = new ArticleController();
+  public articleCtrl: ArticlesController = new ArticlesController();
 
   public attach(app): void {
     this.addRoutes(app);
@@ -15,21 +18,14 @@ export class MainRouter {
   private addRoutes(app) {
     app.route('/').get(this.indexCtrl.getIndex);
 
-    // Articles
-    app.route('/article')
-    // GET - List
-    .get(this.articleCtrl.getArtciles)
-    // POST - Create
-    .post(this.articleCtrl.createArticle);
+    const articlesRouter = new ArtcilesRouter();
+          articlesRouter.attach(app);
 
-    // Article Single
-    app.route('/article/:articleId')
-    // GET Single
-    .get(this.articleCtrl.getArticleById)
-    // Update Article
-    .put(this.articleCtrl.updateArticleById)
-    // Delete Article
-    .delete(this.articleCtrl.deleteArticleById);
+    const usersRouter = new UsersRouter();
+          usersRouter.attach(app);
+
+    const tokenRouter = new TokenRouter();
+          tokenRouter.attach(app);
   }
 
   private addErrorHandler(app) {
@@ -44,18 +40,18 @@ export class MainRouter {
       app.use(function(err, req, res, next) {
         console.log(err.stack);
         res.status(err.status || 500);
-        res.json({'errors': {
-          message: err.message,
-          error: err
+        res.json({'meta': {
+          code: err.status,
+          message: err.message
         }});
       });
     }
     // production error handler
     app.use(function(err, req, res, next) {
       res.status(err.status || 500);
-      res.json({'errors': {
-        message: err.message,
-        error: {}
+      res.json({'meta': {
+        code: err.status,
+        message: err.message
       }});
     });
   }

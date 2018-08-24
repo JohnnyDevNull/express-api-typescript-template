@@ -1,0 +1,21 @@
+# https://github.com/Huachao/vscode-restclient
+
+POST http://localhost:3000/token
+
+###
+
+// Invalid Token if send without auth header
+GET http://localhost:3000/token
+
+###
+
+// Should respond with the token data
+// or "jwt expired"
+GET http://localhost:3000/token
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6InRlc3QiLCJtYWlsIjoidGVzdC50ZXN0QHRlc3QuY29tIn0sImlhdCI6MTUzNTE1NDA0MywiZXhwIjoxNTM1MTU0MDczLCJpc3MiOiJleHByZXNzLWFwaS10eXBlc2NyaXB0LXRlbXBsYXRlIn0.fSgHfu8w4vMLSg-ZdNW9tggCJ-cSOemZLmv4qF4e85U
+
+###
+
+DELETE http://localhost:3000/token
+
+###

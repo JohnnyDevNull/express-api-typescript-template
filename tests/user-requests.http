@@ -1,0 +1,17 @@
+# https://github.com/Huachao/vscode-restclient
+
+POST http://localhost:3000/user
+
+###
+
+GET http://localhost:3000/user
+
+###
+
+PUT http://localhost:3000/user/1
+
+###
+
+DELETE http://localhost:3000/user/1
+
+###

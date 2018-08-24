@@ -1,9 +1,5 @@
 # https://github.com/Huachao/vscode-restclient
 
-GET http://localhost:3000
-
-###
-
 POST http://localhost:3000/article
 content-type: application/json
 

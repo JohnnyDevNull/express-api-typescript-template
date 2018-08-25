@@ -1,6 +1,6 @@
 # express-api-typescript-template
 
-This is a test or template project for playing around with NodeJS + ExpressJS with TypeScript support.
+This is a test or template project for playing around with NodeJS + ExpressJS and Jest as test framework with TypeScript support.
 
 ## Development server
 

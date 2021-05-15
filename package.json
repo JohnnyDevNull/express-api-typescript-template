@@ -28,7 +28,7 @@
     "nodemailer": "^6.4.16",
     "reflect-metadata": "^0.1.13",
     "sanitize": "^2.1.0",
-    "typeorm": "^0.2.20"
+    "typeorm": "^0.2.25"
   },
   "devDependencies": {
     "@types/bcrypt": "^3.0.0",

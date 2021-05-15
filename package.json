@@ -15,7 +15,7 @@
   "license": "MIT",
   "bugs": "https://github.com/JohnnyDevNull/express-api-typescript-template/issues",
   "dependencies": {
-    "bcrypt": "^3.0.7",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
     "errorhandler": "^1.5.1",
